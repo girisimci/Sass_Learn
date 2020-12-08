@@ -1,0 +1,66 @@
+
+$background-color : #85830b;
+$secondry-color : #ffff; //Variables tanımlamalarını bu şekilde yaparak
+                           //bir değişken gibi her yerde çağırdık.
+
+body{
+ 
+    width: 960px;
+    margin: 0 auto;
+    background-color: $background-color;
+}
+/*Nesting Yapı*/
+section{
+    article{
+        .article_title{
+            font-size: 32px;
+            color:$secondry-color;
+        }
+
+        p{
+            .article_author{
+                font-weight: bold;
+                color: $secondry-color;
+            }
+        }
+
+        .article_body{
+            a{
+                color: green;
+                text-decoration: none;
+                
+                &:hover{            //& işareti üstteki nestingleri de kapsadı.
+                    color:blue;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+
+/*
+box class da bulunan özellikleri
+diğer boxlara extend ettik.
+*/
+
+%box{
+    width: 200px;
+    height: 200px;
+    background-color:blue;
+    display: inline-block;
+}
+
+.box1{
+    @extend %box;
+    background-color: red;
+    border-top-left-radius: 50px;;
+}
+.box2{
+    @extend %box;
+
+}
+.box3{
+    @extend %box;
+    background-color: yellow;
+}

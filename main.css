@@ -1,0 +1,46 @@
+@charset "UTF-8";
+body {
+  width: 960px;
+  margin: 0 auto;
+  background-color: #85830b;
+}
+
+/*Nesting Yapı*/
+section article .article_title {
+  font-size: 32px;
+  color: #ffff;
+}
+section article p .article_author {
+  font-weight: bold;
+  color: #ffff;
+}
+section article .article_body a {
+  color: green;
+  text-decoration: none;
+}
+section article .article_body a:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+/*
+box class da bulunan özellikleri
+diğer boxlara extend ettik.
+*/
+.box3, .box2, .box1 {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+  display: inline-block;
+}
+
+.box1 {
+  background-color: red;
+  border-top-left-radius: 50px;
+}
+
+.box3 {
+  background-color: yellow;
+}
+
+/*# sourceMappingURL=main.css.map */
