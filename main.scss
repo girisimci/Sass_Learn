@@ -1,7 +1,28 @@
 
-$background-color : #85830b;
-$secondry-color : #ffff; //Variables tanımlamalarını bu şekilde yaparak
-                           //bir değişken gibi her yerde çağırdık.
+$background-color : #85830b;//Variables tanımlamalarını bu şekilde yaparak
+$secondry-color : #ffff; //bir değişken gibi her yerde çağırdık.
+
+
+
+/*Mixin Özelliği -> Fonksiyon mantığında kullanılır
+Genel parametre alır ve içerisinde belirlediğimiz
+özellikleri parametreler ile birlikte değerlendirebiliriz.
+eklemek istediğin yere @include mixin_ismi() şeklinde
+import edersin.
+*/
+
+@mixin border-generator($top_left,$top_right,$bottom_left,$bottom_right) {
+
+    border-top-left-radius: $top_left;
+    border-top-right-radius: $top_right;
+    border-bottom-left-radius: $bottom_left;
+    border-bottom-right-radius: $bottom_right;
+}
+
+
+
+
+
 
 body{
  
@@ -54,13 +75,14 @@ diğer boxlara extend ettik.
 .box1{
     @extend %box;
     background-color: red;
-    border-top-left-radius: 50px;;
+    @include border-generator(10px,20px,30px ,40px );
 }
 .box2{
     @extend %box;
-
+    @include border-generator(50px,100px ,5px ,69px )
 }
 .box3{
     @extend %box;
     background-color: yellow;
+    @include border-generator(200px,100px ,200px ,100px )
 }

@@ -1,4 +1,10 @@
 @charset "UTF-8";
+/*Mixin Özelliği -> Fonksiyon mantığında kullanılır
+Genel parametre alır ve içerisinde belirlediğimiz
+özellikleri parametreler ile birlikte değerlendirebiliriz.
+eklemek istediğin yere @include mixin_ismi() şeklinde
+import edersin.
+*/
 body {
   width: 960px;
   margin: 0 auto;
@@ -36,11 +42,25 @@ diğer boxlara extend ettik.
 
 .box1 {
   background-color: red;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 40px;
+}
+
+.box2 {
   border-top-left-radius: 50px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 69px;
 }
 
 .box3 {
   background-color: yellow;
+  border-top-left-radius: 200px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 200px;
+  border-bottom-right-radius: 100px;
 }
 
 /*# sourceMappingURL=main.css.map */
